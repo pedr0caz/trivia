@@ -1,36 +1,42 @@
 import React, { useRef, useState } from "react";
 
 import { useAuth } from "../contexts/AuthContext";
+
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function Signup() {
 	const emailRef = useRef();
 	const passwordRef = useRef();
-	const { login } = useAuth();
+	const passwordConfirmRef = useRef();
+	const { signup } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
-	let navigate = useNavigate();
+	const history = useNavigate();
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+
+		if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+			return setError("Passwords do not match");
+		}
 		try {
 			setError("");
 			setLoading(true);
-			await login(emailRef.current.value, passwordRef.current.value);
-			setLoading(false);
-			navigate("/");
+			await signup(emailRef.current.value, passwordRef.current.value);
+
+			history("/");
 		} catch (e) {
-			setError("Failed to log in");
-			setLoading(false);
-		} finally {
+			setError("Failed to create an account");
 		}
+
+		setLoading(false);
 	}
 
 	return (
 		<div className="box">
 			<div>
 				<div>
-					<h2>Log In</h2>
+					<h2>Sign Up</h2>
 					{error && { error }}
 					<form onSubmit={handleSubmit}>
 						<div id="email">
@@ -41,17 +47,18 @@ export default function Login() {
 							<label>Password</label>
 							<input type="password" ref={passwordRef} required />
 						</div>
-						<button disabled={loading} type="submit">
-							Log In
+						<div id="password-confirm">
+							<label>Password Confirmation</label>
+							<input type="password" ref={passwordConfirmRef} required />
+						</div>
+						<button disabled={loading} className="w-100" type="submit">
+							Sign Up
 						</button>
 					</form>
-					<div>
-						<Link to="/forgot-password">Forgot Password?</Link>
-					</div>
 				</div>
 			</div>
 			<div>
-				Need an account? <Link to="/signup">Sign Up</Link>
+				Already have an account? <Link to="/login">Log In</Link>
 			</div>
 		</div>
 	);
