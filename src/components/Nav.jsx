@@ -6,7 +6,7 @@ export default function Nav() {
 			<ul className="navbar-nav">
 				<li className="logo">
 					<Link to="/" className="nav-link">
-						<span className="link-text logo-text">Trivia360</span>
+						<span className="link-text logo-text">Trivia</span>
 					</Link>
 				</li>
 				<li className="nav-item">
@@ -17,14 +17,14 @@ export default function Nav() {
 				</li>
 
 				<li className="nav-item">
-					<Link to="/" className="nav-link">
+					<Link to="/game" className="nav-link">
 						<i class="fi fi-rr-play"></i>
 						<span className="link-text">Play</span>
 					</Link>
 				</li>
 
 				<li className="nav-item">
-					<Link to="/" className="nav-link">
+					<Link to="/ranking" className="nav-link">
 						<i class="fi fi-rr-star"></i>
 
 						<span className="link-text">Ranking</span>
@@ -32,7 +32,7 @@ export default function Nav() {
 				</li>
 
 				<li className="nav-item">
-					<Link to="/" className="nav-link">
+					<Link to="/contact" className="nav-link">
 						<i class="fi fi-rr-exclamation"></i>
 						<span className="link-text">Info</span>
 					</Link>
