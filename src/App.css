@@ -1,0 +1,251 @@
+:root {
+	font-size: 16px;
+	font-family: "Dank Mono", ui-monospace, monospace;
+	--text-primary: #b6b6b6;
+	--text-secondary: #ececec;
+	--bg-primary: #23232e;
+	--bg-secondary: #141418;
+	--transition-speed: 600ms;
+}
+
+body {
+	color: var(--text-primary);
+	background-color: var(--bg-primary);
+	margin: 0;
+	padding: 0;
+	transition: background 500ms ease-in-out, color 1000ms ease-in-out;
+}
+
+main {
+	margin-left: 5rem;
+	padding: 1rem;
+}
+.navbar::-webkit-scrollbar {
+	display: none;
+}
+.navbar {
+	position: fixed;
+	background-color: var(--bg-secondary);
+	transition: width 600ms ease;
+	overflow: scroll;
+	z-index: 1;
+	filter: opacity(0.8);
+}
+
+.navbar-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+}
+
+.nav-item {
+	width: 100%;
+}
+
+.nav-item:last-child {
+	margin-top: auto;
+}
+
+.nav-link {
+	display: flex;
+	align-items: center;
+	height: 5rem;
+	color: var(--text-primary);
+	text-decoration: none;
+	filter: grayscale(100%) opacity(0.7);
+	transition: var(--transition-speed);
+}
+
+.nav-link:hover {
+	filter: grayscale(0%) opacity(1);
+	background: var(--bg-secondary);
+	color: var(--text-secondary);
+}
+
+.link-text {
+	display: none;
+	margin-left: 1rem;
+}
+
+.nav-link [class*="fi-rr-"], [class*="fi-sr-"], [class*="fi-rs-"]:before {
+	font-size: 1.5rem;
+	width: 2rem;
+	min-width: 2rem;
+	margin: 0 1.5rem;
+}
+
+.logo {
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+	text-align: center;
+
+	font-size: 1.5rem;
+	letter-spacing: 0.3ch;
+	width: 100%;
+	text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	
+}
+
+.logo-text {
+	display: inline;
+	position: absolute;
+	left: -999px;
+	transition: var(--transition-speed);
+	text-transform: uppercase;
+	background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.navbar:hover .logo svg {
+	transform: rotate(-180deg);
+}
+
+@media only screen and (max-width: 600px) {
+	.navbar {
+		bottom: 0;
+		width: 100vw;
+		height: 5rem;
+	}
+
+	.logo {
+		display: none;
+	}
+
+	.navbar-nav {
+		flex-direction: row;
+	}
+
+	.nav-link {
+		justify-content: center;
+	}
+
+	main {
+		margin: 0;
+	}
+}
+
+@media only screen and (min-width: 600px) {
+	.navbar {
+		top: 0;
+		width: 5rem;
+		height: 100vh;
+	}
+
+	.navbar:hover {
+		width: 16rem;
+	}
+
+	.navbar:hover .link-text {
+		display: inline;
+	}
+
+	.navbar:hover .logo svg {
+		margin-left: 11rem;
+	}
+
+	.navbar:hover .logo-text {
+		left: 0px;
+	}
+}
+
+.question {
+	text-align: center;
+	padding: 20px;
+}
+
+.btn {
+	width: 80%;
+	background-color: var(--text-primary);
+	text-align: center;
+	padding: 30px;
+	border-radius: 25px;
+}
+
+.btn:hover {
+	background-color: var(--bg-secondary);
+	transition: 200ms;
+}
+
+section {
+	min-height: 85vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	width: 300px;
+	padding: 20px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: #191919;
+	text-align: center;
+	border-radius: 20px 20px;
+}
+.box h1 {
+	color: white;
+	text-transform: uppercase;
+	font-weight: 500;
+	background: linear-gradient(to right, hsl(1 100% 50%), hsl(100 100% 50%));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: center;
+}
+.box input[type="text"],
+.box input[type="email"],
+.box input[type="password"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 5px auto;
+	text-align: center;
+	border: 2px solid #d4ac0d;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	color: white;
+	border-radius: 24px;
+	transition: 0.5s;
+}
+.box input[type="text"]:focus,
+.box input[type="email"]:focus,
+.box input[type="password"]:focus {
+	border-color: #a04000;
+	width: 250px;
+}
+.box input[type="text"]:hover,
+.box input[type="email"]:focus,
+.box input[type="password"]:hover {
+	border-color: #a04000;
+}
+.box input[type="submit"] {
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	border: 2px solid #d4ac0d;
+	padding: 14px 40px;
+	outline: none;
+	color: white;
+	transition: 0.25s;
+	cursor: pointer;
+}
+.box input[type="submit"]:focus {
+	border-color: #d4ac0d;
+}
+.box input[type="submit"]:hover {
+	background: #d4ac0d;
+	border-radius: 24px;
+}
