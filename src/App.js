@@ -1,12 +1,53 @@
-import "./App.css";
-import  "normalize.css"
+import React from "react";
+import Signup from "./components/Signup";
+import { AuthProvider } from "./contexts/AuthContext";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-function App() {
+import Home from "./components/Home";
+import Login from "./components/Login";
+import PrivateRoute from "./components/PrivateRoute";
+import UpdateProfile from "./components/UpdateProfile";
+import ForgotPassword from "./components/ForgotPassword";
+import Nav from "./components/Nav";
+
+
+import "./App.css";
+
+function AppLogin() {
 	return (
-		<div className="App">
-			
-		</div>
+		<Router>
+			<AuthProvider>
+				<Nav />
+				<main className="wrapper">
+					<div style={{ maxWidth: "400px" }}>
+						<Routes>
+							<Route
+								exact
+								path="/"
+								element={
+									<PrivateRoute>
+										<Home />
+									</PrivateRoute>
+								}
+							/>
+							<Route
+								path="/update-profile"
+								element={
+									<PrivateRoute>
+										<UpdateProfile />
+									</PrivateRoute>
+								}
+							/>
+
+							<Route path="/signup" element={<Signup />} />
+							<Route path="/login" element={<Login />} />
+							<Route path="/forgot-password" element={<ForgotPassword />} />
+						</Routes>
+					</div>
+				</main>
+			</AuthProvider>
+		</Router>
 	);
 }
 
-export default App;
+export default AppLogin;
