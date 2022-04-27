@@ -1,5 +1,8 @@
 export default function Trivia(){
 	return (
-		<h1>Game..</h1>
+		<section>
+			
+		</section>
+		
 	)
 }

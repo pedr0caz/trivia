@@ -39,7 +39,7 @@ export default function UpdateProfile() {
 	}
 
 	return (
-		<>
+		<div className="box">
 			<div>
 				<div>
 					<h2 >Update Profile</h2>
@@ -79,6 +79,6 @@ export default function UpdateProfile() {
 			<div >
 				<Link to="/">Cancel</Link>
 			</div>
-		</>
+		</div>
 	);
 }

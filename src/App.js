@@ -19,8 +19,8 @@ function AppLogin() {
 		<Router>
 			<AuthProvider>
 				<Nav />
-				<main className="wrapper">
-					<div style={{ maxWidth: "400px" }}>
+				<main className="wrapper" style={{backgroundImage: "url(./images/bg.png)"}}>
+					<div>
 						<Routes>
 							<Route
 								exact
