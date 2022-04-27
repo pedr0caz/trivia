@@ -9,7 +9,8 @@ import PrivateRoute from "./components/PrivateRoute";
 import UpdateProfile from "./components/UpdateProfile";
 import ForgotPassword from "./components/ForgotPassword";
 import Nav from "./components/Nav";
-
+import Trivia from "./components/Trivia";
+import Ranking from "./components/Ranking";
 
 import "./App.css";
 
@@ -39,9 +40,19 @@ function AppLogin() {
 								}
 							/>
 
+							<Route
+								path="/game"
+								element={
+									<PrivateRoute>
+										<Trivia />
+									</PrivateRoute>
+								}
+							/>
+
 							<Route path="/signup" element={<Signup />} />
 							<Route path="/login" element={<Login />} />
 							<Route path="/forgot-password" element={<ForgotPassword />} />
+							<Route path="/ranking" element={<Ranking />} />
 						</Routes>
 					</div>
 				</main>

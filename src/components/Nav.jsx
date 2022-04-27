@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 
-
-
 export default function Nav() {
 	return (
 		<nav className="navbar">
@@ -19,7 +17,7 @@ export default function Nav() {
 				</li>
 
 				<li className="nav-item">
-					<Link to="/" className="nav-link" >
+					<Link to="/" className="nav-link">
 						<i class="fi fi-rr-play"></i>
 						<span className="link-text">Play</span>
 					</Link>
@@ -27,7 +25,7 @@ export default function Nav() {
 
 				<li className="nav-item">
 					<Link to="/" className="nav-link">
-					<i class="fi fi-rr-star"></i>
+						<i class="fi fi-rr-star"></i>
 
 						<span className="link-text">Ranking</span>
 					</Link>
@@ -35,7 +33,7 @@ export default function Nav() {
 
 				<li className="nav-item">
 					<Link to="/" className="nav-link">
-					<i class="fi fi-rr-exclamation"></i>
+						<i class="fi fi-rr-exclamation"></i>
 						<span className="link-text">Info</span>
 					</Link>
 				</li>
