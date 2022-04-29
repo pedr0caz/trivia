@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Trivia from "./Trivia";
+import CategoriesLevel from "./CategoriesLevel";
 
 export default function Game() {
 	const [gameStart, setGameStart] = useState(true);
@@ -12,7 +13,7 @@ export default function Game() {
 
 	return (
 		<div className="game-container">
-			{gameStart ? <Trivia startTrivia={startTrivia} /> : "Choose cat"}
+			{gameStart ? <Trivia startTrivia={startTrivia} /> : <CategoriesLevel/>}
 		</div>
 	);
 }
