@@ -10,11 +10,7 @@ export default function Nav() {
 		<>
 			<nav className="navbar">
 				<ul className="navbar-nav">
-					<li className="logo">
-						<Link to="/" className="nav-link">
-							<span className="link-text logo-text">Trivia</span>
-						</Link>
-					</li>
+					
 					<li className="nav-item">
 						<Link to="/" className="nav-link">
 							<i className="fi fi-rr-home"></i>
@@ -32,7 +28,7 @@ export default function Nav() {
 					<li className="nav-item">
 						<Link to="/ranking" className="nav-link">
 							<i className="fi fi-rr-star"></i>
-
+							
 							<span className="link-text">Ranking</span>
 						</Link>
 					</li>
