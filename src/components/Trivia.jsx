@@ -6,7 +6,7 @@ export default function Trivia({ startTrivia }) {
 			</center>
 			<p className="intro_selection_subtitle">Do you know everything?</p>
 			<button className="intro_selection_btn" onClick={startTrivia}>
-				Start
+				Play
 			</button>
 		</section>
 	);
