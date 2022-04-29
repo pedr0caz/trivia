@@ -9,7 +9,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import UpdateProfile from "./components/UpdateProfile";
 import ForgotPassword from "./components/ForgotPassword";
 import Nav from "./components/Nav";
-import Trivia from "./components/Trivia";
+import Game from "./components/Game";
 import Ranking from "./components/Ranking";
 
 import "./App.css";
@@ -44,7 +44,7 @@ function AppLogin() {
 								path="/game"
 								element={
 									<PrivateRoute>
-										<Trivia />
+										<Game />
 									</PrivateRoute>
 								}
 							/>
