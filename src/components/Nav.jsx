@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
 	const { currentUser, logout } = useAuth();
@@ -53,7 +53,7 @@ export default function Nav() {
 			</nav>
 			{currentUser && (
 				<div className="topBar">
-					<Link to="/contact">
+					<Link to="" onClick={() => logout()}>
 						<i className="fi fi-rr-sign-out"></i>
 					</Link>
 				</div>
