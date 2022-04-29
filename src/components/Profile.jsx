@@ -8,7 +8,7 @@ export default function Home() {
 	const { currentUser, logout } = useAuth();
 	const history = useNavigate();
 
-	async function handleLogout() {
+	const handleLogout = async () => {
 		setError("");
 
 		try {

@@ -11,7 +11,7 @@ export default function Login() {
 	const [loading, setLoading] = useState(false);
 	let navigate = useNavigate();
 
-	async function handleSubmit(e) {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
 			setError("");

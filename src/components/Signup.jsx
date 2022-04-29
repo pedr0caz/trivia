@@ -13,7 +13,7 @@ export default function Signup() {
 	const [loading, setLoading] = useState(false);
 	const history = useNavigate();
 
-	async function handleSubmit(e) {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
 		if (passwordRef.current.value !== passwordConfirmRef.current.value) {
