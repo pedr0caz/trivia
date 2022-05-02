@@ -446,7 +446,6 @@ button:active {
 	.category-options {
 		font-size: 0.9rem;
 	}
-	
 }
 
 @media (max-width: 375px) {
@@ -458,14 +457,13 @@ button:active {
 	}
 }
 
-
 /* ---Loading screen--- */
 
 .loading-spinner {
 	margin: auto;
-	border: 10px solid  #f3e8bc;
+	border: 10px solid #f3e8bc;
 	border-radius: 50%;
-	border-top: 10px solid  #d4ac0d;
+	border-top: 10px solid #d4ac0d;
 	width: 100px;
 	height: 100px;
 	animation: spinner 1s linear infinite;
@@ -480,3 +478,4 @@ button:active {
 }
 
 /* ------ */
+
