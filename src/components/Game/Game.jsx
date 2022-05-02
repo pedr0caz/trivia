@@ -3,6 +3,7 @@ import Trivia from "./Trivia";
 import CategoriesLevel from "./CategoriesLevel";
 import QuestionList from "./QuestionList";
 import Scorebox from "./Scorebox";
+import Logo from "../UI/Logo";
 
 export default function Game() {
 	const [gameStart, setGameStart] = useState(true);
@@ -30,20 +31,23 @@ export default function Game() {
 	};
 
 	return (
-		<div className="game-container">
-			{gameStart ? (
-				<Trivia startTrivia={startTrivia} />
-			) : (
-				customizingQuiz && (
-					<CategoriesLevel getData={getData} customButton={customButton} />
-				)
-			)}
-			{!gameStart && !customizingQuiz && (
-				<div className="quiz-container">
-					<Scorebox />
-					<QuestionList />
-				</div>
-			)}
-		</div>
+		<section>
+			<div className="game-container">
+				{gameStart ? (
+					<Trivia startTrivia={startTrivia} />
+				) : (
+					customizingQuiz && (
+						<CategoriesLevel getData={getData} customButton={customButton} />
+					)
+				)}
+				{!gameStart && !customizingQuiz && (
+					<div className="quiz-container">
+						<Logo />
+						<Scorebox />
+						<QuestionList />
+					</div>
+				)}
+			</div>
+		</section>
 	);
 }

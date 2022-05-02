@@ -1,8 +1,9 @@
 import React from "react";
+import Logo from "./Logo";
 export default function Home() {
 	return (
 		<section>
-			<center><img src="/images/giant.png" alt="" height="100px" /></center>
+			<Logo />
 			<p>dasd</p>
 		</section>
 	);

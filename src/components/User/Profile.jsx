@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import { useAuth } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import Logo from "../UI/Logo";
 
 export default function Home() {
 	const [error, setError] = useState("");
@@ -19,21 +20,19 @@ export default function Home() {
 		} catch (e) {
 			setError("Failed to log out");
 		}
-	}
+	};
 
 	return (
-		<>
+		<section>
+			<Logo />
 			<div>
-				<div>
-					<h2>Profile</h2>
-					{error && { error }}
-					<strong>Email:</strong> {currentUser.email}
-					<Link to="/update-profile">Update Profile</Link>
-				</div>
+				<h2>Profile</h2>
+				{error && { error }}
+				<strong>Email:</strong> {currentUser.email}
+				<Link to="/update-profile">Update Profile</Link>
 			</div>
-			<div>
-				<button onClick={handleLogout}>Log Out</button>
-			</div>
-		</>
+
+			<button onClick={handleLogout}>Log Out</button>
+		</section>
 	);
 }

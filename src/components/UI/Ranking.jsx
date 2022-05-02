@@ -1,8 +1,10 @@
 import React from "react";
+import Logo from "./Logo";
 
 export default function Ranking() {
 	return (
 		<section>
+			<Logo/>
 			<div className="ptable">
 				<h1 className="headin">Ranking</h1>
 				<table>

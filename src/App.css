@@ -1,6 +1,4 @@
 :root {
-	font-size: 16px;
-	font-family: "Dank Mono", ui-monospace, monospace;
 	--text-primary: #b6b6b6;
 	--text-secondary: #ececec;
 	--bg-primary: #23232e;
@@ -9,10 +7,15 @@
 }
 
 body {
-	color: var(--text-primary);
+	color: var(--text-secondary);
 	background-color: var(--bg-primary);
 	margin: 0;
 	padding: 0;
+	font-family: "Russo One", sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+
 	transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 
@@ -36,6 +39,7 @@ main {
 .navbar::-webkit-scrollbar {
 	display: none;
 }
+
 .navbar {
 	position: fixed;
 	background-color: var(--bg-secondary);
@@ -130,25 +134,20 @@ section {
 }
 
 .box {
-	width: 300px;
 	padding: 20px;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: #191919;
 	text-align: center;
 	border-radius: 20px 20px;
 }
+
 .box h1 {
 	color: white;
 	text-transform: uppercase;
 	font-weight: 500;
 	background: linear-gradient(to right, hsl(1 100% 50%), hsl(100 100% 50%));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+
 	text-align: center;
 }
+
 .box input[type="text"],
 .box input[type="email"],
 .box input[type="password"] {
@@ -165,17 +164,20 @@ section {
 	border-radius: 24px;
 	transition: 0.5s;
 }
+
 .box input[type="text"]:focus,
 .box input[type="email"]:focus,
 .box input[type="password"]:focus {
 	border-color: #a04000;
 	width: 250px;
 }
+
 .box input[type="text"]:hover,
 .box input[type="email"]:focus,
 .box input[type="password"]:hover {
 	border-color: #a04000;
 }
+
 .box button[type="submit"] {
 	border: 0;
 	background: none;
@@ -189,9 +191,11 @@ section {
 	transition: 0.25s;
 	cursor: pointer;
 }
+
 .box button[type="submit"]:focus {
 	border-color: #d4ac0d;
 }
+
 .box button[type="submit"]:hover {
 	background: #d4ac0d;
 	border-radius: 24px;
@@ -319,6 +323,7 @@ table .col {
 		left: 0px;
 	}
 }
+
 /* ------------------- */
 
 button {
@@ -373,11 +378,12 @@ button:active {
 
 .category-header {
 	font-size: 1.5rem;
-	letter-spacing: -0.05em;
 }
+
 .category-header-level {
 	margin: 0 0 0.6em 0;
 }
+
 .category-options {
 	width: 100%;
 	display: flex;
@@ -385,14 +391,17 @@ button:active {
 	padding-left: 0;
 	justify-content: center;
 }
+
 .category-options-level {
 	padding-left: 0.2em;
 }
+
 .category-options .option {
 	margin-bottom: 1em;
 	margin-right: 0.5em;
 	margin-left: 0.5em;
 }
+
 .start-trivia-btn {
 	width: 190px;
 	margin: 0 0 1em 0;
@@ -412,13 +421,14 @@ button:active {
 	cursor: pointer;
 	transition: background-color 200ms, color 200ms, border 200ms;
 }
+
 .option:hover {
 	background-color: #ffcc00;
 	color: #f5f7fb;
 	border: 1px solid #4d5b9e;
 }
 
-@media (max-width: 820px) {
+@media only screen and (max-width: 820px) {
 	.category-container {
 		border-radius: 0px;
 		min-height: 100vh;
@@ -426,34 +436,97 @@ button:active {
 		padding: 2em 2em;
 		justify-content: center;
 	}
+
 	.category-options-level {
 		padding-left: 0em;
 	}
+
 	.start-quiz-btn {
 		margin: 1em 0;
 	}
+
+	.logo_area img {
+		margin-left: 0rem !important;
+		margin-right: 0rem !important;
+	}
+
+	.question_title {
+		font-size: 1.8rem !important;
+	}
+
+	.progress {
+		height: 3rem !important;
+		width: 90% !important;
+		margin: auto;
+	}
 }
 
-@media (max-width: 480px) {
+@media only screen and (max-width: 480px) {
 	.category-container {
 		padding: 0em 1em 4em 1em;
 		min-height: 100vh;
 		height: 100%;
 	}
+
 	.category-header {
 		font-size: 1.3rem;
 	}
+
 	.category-options {
 		font-size: 0.9rem;
 	}
+
+	.logo_area img {
+		margin-left: 0rem !important;
+		margin-right: 0rem !important;
+	}
+
+	.question_title {
+		font-size: 1.5rem !important;
+		padding: 0rem 2rem !important;
+	}
+
+	.progress {
+		height: 2.8rem !important;
+		width: 90% !important;
+		margin: auto;
+	}
 }
 
-@media (max-width: 375px) {
+@media only screen and (max-width: 376px) {
 	.category-container {
 		background-position: 110% 0%, -5% 102%;
 	}
+
 	.category-options {
 		font-size: 0.8rem;
+	}
+
+	.logo_area img {
+		margin-top: 0.5rem !important;
+		margin-left: 0rem !important;
+		margin-right: 0rem !important;
+		width: 60% !important;
+	}
+
+	.question_title {
+		font-size: 1.1rem !important;
+		padding: 0rem 2rem !important;
+	}
+
+	.progress {
+		height: 2rem !important;
+		width: 80% !important;
+		margin: auto;
+	}
+
+	.question_options .option_awnsers {
+		width: 70% !important;
+		font-size: 0.85rem !important;
+	}
+
+	.progress-bar {
+		margin-top: 0.3rem !important;
 	}
 }
 
@@ -468,10 +541,12 @@ button:active {
 	height: 100px;
 	animation: spinner 1s linear infinite;
 }
+
 @keyframes spinner {
 	0% {
 		transform: rotate(0deg);
 	}
+
 	100% {
 		transform: rotate(360deg);
 	}
@@ -479,26 +554,101 @@ button:active {
 
 /* ------ */
 
+.question_title {
+	font-size: 2rem;
+}
+
 .question {
 	border-bottom: 1px solid #33333349;
 }
+
 .question_title {
-	font-size: 1.5rem;
-	letter-spacing: -0.05em;
 	text-align: center;
 }
+
 .question_options {
-	display: grid;
-	grid-template-columns: auto auto;
-	grid-gap: 3vh;
-	justify-content: center;
-	margin-bottom: 0em;
-	column-gap: 10vw;
+	text-align: center;
 }
 
 .question_options .option_awnsers {
-	font-weight: 500;
-	width: 37vw;
-	border-radius: 15px;
-	transition: background-color 200ms, color 200ms, border 200ms;
+	width: 80%;
+	max-width: 90vw;
+	color: #fff !important;
+	display: inline-block;
+	font-weight: 400;
+	font-size: 1rem;
+	padding: 1rem 2rem;
+	margin-top: 0.625rem;
+	border: 5px solid #d4ac0d;
+	cursor: pointer;
+	margin: 0.8vh;
+	border-radius: 50rem !important;
+	text-align: center !important;
+	position: relative !important;
+}
+
+.scorebox .question_number {
+	text-align: center;
+	text-transform: capitalize;
+}
+
+.logo {
+	text-align: center;
+	display: block;
+}
+
+.logo_area img {
+	margin: 4rem 0rem 0rem 5rem;
+}
+
+.progress {
+	max-width: 70vw;
+	width: 100%;
+	height: 2.5rem;
+	background-color: #31395c;
+	position: relative;
+	display: flex;
+	overflow: hidden;
+
+	font-size: 0.75rem;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.rounded-pill {
+	border-radius: 50rem !important;
+}
+
+.progress .fi {
+	top: 60%;
+	right: 5%;
+
+	transform: translateY(-50%);
+	color: #ffb9b9;
+	font-size: 1.5625rem;
+	position: absolute;
+	z-index: 5;
+	display: inline-flex;
+	vertical-align: top;
+}
+
+.score_title {
+	font-size: 0.9rem;
+}
+
+.progress-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow: hidden;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	background: linear-gradient(to right, #cacaca, #ffffff);
+	z-index: 3;
+	transition: width 0.6s ease;
+	height: 1.5rem;
+	margin-top: 0.5rem;
 }
