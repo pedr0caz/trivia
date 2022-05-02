@@ -479,3 +479,26 @@ button:active {
 
 /* ------ */
 
+.question {
+	border-bottom: 1px solid #33333349;
+}
+.question_title {
+	font-size: 1.5rem;
+	letter-spacing: -0.05em;
+	text-align: center;
+}
+.question_options {
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-gap: 3vh;
+	justify-content: center;
+	margin-bottom: 0em;
+	column-gap: 10vw;
+}
+
+.question_options .option_awnsers {
+	font-weight: 500;
+	width: 37vw;
+	border-radius: 15px;
+	transition: background-color 200ms, color 200ms, border 200ms;
+}
