@@ -1,16 +1,16 @@
 import React from "react";
-import Signup from "./components/Signup";
+import Signup from "./components/UI/Signup";
 import { AuthProvider } from "./contexts/AuthContext";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Home from "./components/Home";
-import Login from "./components/Login";
-import PrivateRoute from "./components/PrivateRoute";
-import UpdateProfile from "./components/UpdateProfile";
-import ForgotPassword from "./components/ForgotPassword";
-import Nav from "./components/Nav";
-import Game from "./components/Game";
-import Ranking from "./components/Ranking";
+import Home from "./components/UI/Home";
+import Login from "./components/UI/Login";
+import PrivateRoute from "./components/Routes/PrivateRoute";
+import UpdateProfile from "./components/User/UpdateProfile";
+import ForgotPassword from "./components/UI/ForgotPassword";
+import Nav from "./components/UI/Nav";
+import Game from "./components/Game/Game";
+import Ranking from "./components/UI/Ranking";
 
 import "./App.css";
 
