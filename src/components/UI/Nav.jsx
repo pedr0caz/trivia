@@ -45,7 +45,7 @@ export default function Nav() {
 
 					<li className="nav-item">
 						<Link to="/contact" className="nav-link">
-							<i className="fi fi-rr-exclamation"></i>
+							<i className="fi fi-rr-interrogation"></i>
 							<span className="link-text">Info</span>
 						</Link>
 					</li>
