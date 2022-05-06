@@ -4,26 +4,37 @@ import Logo from "./Logo";
 export default function Ranking() {
 	return (
 		<section>
-			<Logo/>
-			<div className="ptable">
-				<h1 className="headin">Ranking</h1>
-				<table>
-					<thead>
-						<tr className="col">
-							<th>#</th>
-							<th>Player</th>
-							<th>Points</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr className="wpos">
-							<td>1</td>
-							<td>Test</td>
-							<td>100</td>
-						</tr>
-					</tbody>
-				</table>
+			<Logo />
+			<div class="table-ranking">
+				Ranking
+				<div class="table-wrapper">
+					<table>
+						<thead>
+							<tr>
+								<th>Rank</th>
+								<th>Player</th>
+								<th>Points</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="rank">1</td>
+								<td class="team">A</td>
+								<td class="points">1460</td>
+							</tr>
+							<tr>
+								<td class="rank">2</td>
+								<td class="team">B</td>
+								<td class="points">1340</td>
+							</tr>
+							<tr>
+								<td class="rank">3</td>
+								<td class="team">C</td>
+								<td class="points">1245</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</section>
 	);

@@ -24,7 +24,8 @@ body {
 	background-repeat: repeat;
 	background-position: center center;
 	overflow: hidden;
-	min-height: 96vh;
+	min-height: 93vh;
+	margin-bottom: calc(20px + 0.5vh);
 }
 
 main {
@@ -62,8 +63,6 @@ main {
 .nav-item {
 	width: 100%;
 }
-
-
 
 .nav-link {
 	display: flex;
@@ -201,69 +200,48 @@ section {
 
 /* ------ Ranking Table ------ */
 
-.ptable table {
-	margin: 30px auto;
+.table-wrapper {
+	border: 2px solid #d4ac0d;
+	border-radius: 5px;
+	overflow: hidden;
+	margin-top: 10px;
+  }
+  
+  table {
 	border-collapse: collapse;
-}
-
-.ptable {
-	margin: 0px 0% 30px 0%;
-}
-
-th,
-td {
-	padding: 10px;
+  }
+table {
+	border-collapse: collapse;
+	width: 100%;
+	background: rgb(92, 92, 92);
+	
 }
 
 th {
-	background-color: black;
-	color: #ffe221;
-	padding: 10px;
+	background-color: #f7dd79;
+	font-weight: bold;
+	color: rgb(0, 0, 0);
+	white-space: nowrap;
+	
 }
 
-.headin {
-	text-align: center;
-	text-decoration: none;
-	color: #ffe221;
-	margin: 30px;
-	display: block;
+td,
+th {
+	padding: 1em 1.5em;
+	text-align: left;
 }
 
-.wpos {
-	text-align: center;
+
+tbody tr:nth-child(2n-1) {
+	background-color: #acacac;
+	transition: all 0.125s ease-in-out;
+}
+tbody tr:hover {
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.wpos td {
-	color: #77ff21;
-	padding: 10px;
-}
-
-.pos {
-	text-align: center;
-}
-
-.pos td {
-	color: #ff7b21;
-}
-
-table .col {
-	border-bottom: 1px solid #ffffff;
-}
-
-.wpos:hover {
-	background-color: #77ff21;
-}
-
-.wpos:hover td {
-	color: #000000;
-}
-
-.pos:hover {
-	background-color: #ff7b21;
-}
-
-.pos:hover td {
-	color: #000000;
+td.rank {
+	text-transform: capitalize;
 }
 
 /* ------------------- */
@@ -508,7 +486,7 @@ button:active {
 	}
 
 	.question_title {
-		font-size: 1.1rem !important;
+		font-size: 1rem !important;
 		padding: 0rem 2rem !important;
 	}
 
@@ -554,6 +532,7 @@ button:active {
 
 .question_title {
 	font-size: 2rem;
+	letter-spacing: 1px;
 }
 
 .question {
@@ -577,7 +556,7 @@ button:active {
 	font-size: 1rem;
 	padding: 1rem 2rem;
 	margin-top: 0.625rem;
-	border: 5px solid #d4ac0d;
+	border: 2px solid #d4ac0d;
 	cursor: pointer;
 	margin: 0.8vh;
 	border-radius: 50rem !important;
