@@ -43,7 +43,7 @@ export default function UpdateProfile() {
 		<section>
 			<Logo />
 			<div className="box">
-				<h2>Update Profile</h2>
+				<h1>Update Profile</h1>
 				{error && { error }}
 				<form onSubmit={handleSubmit}>
 					<div id="email">

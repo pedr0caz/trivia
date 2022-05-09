@@ -44,7 +44,7 @@ export default function Nav() {
 					)}
 
 					<li className="nav-item">
-						<Link to="/contact" className="nav-link">
+						<Link to="/faq" className="nav-link">
 							<i className="fi fi-rr-interrogation"></i>
 							<span className="link-text">Info</span>
 						</Link>

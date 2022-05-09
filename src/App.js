@@ -11,6 +11,7 @@ import ForgotPassword from "./components/UI/ForgotPassword";
 import Nav from "./components/UI/Nav";
 import Game from "./components/Game/Game";
 import Ranking from "./components/UI/Ranking";
+import Faq from "./components/UI/Faq"
 
 import "./App.css";
 
@@ -55,6 +56,7 @@ function AppLogin() {
 						<Route path="/login" element={<Login />} />
 						<Route path="/forgot-password" element={<ForgotPassword />} />
 						<Route path="/ranking" element={<Ranking />} />
+						<Route path="/faq" element={<Faq />} />
 					</Routes>
 				</main>
 			</AuthProvider>
