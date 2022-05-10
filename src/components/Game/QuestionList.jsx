@@ -1,13 +1,20 @@
 import React from "react";
 import Question from "./Question";
 
-export default function QuestionList(props) {
-	const { questions } = props;
+export default function QuestionList({ settings, setSettings }) {
 	return (
 		<div className="questions">
-			{questions.map((question) => {
-				if (question.id === props.current) {
-					return <Question question={question} key={question.id} {...props} />;
+			{settings.gameQuestions.map((question) => {
+				if (question.id === settings.gameCurrentQuestion) {
+					console.log("ok")
+					return (
+						<Question
+							question={question}
+							key={question.id}
+							settings={settings}
+							setSettings={setSettings}
+						/>
+					);
 				} else {
 					return null;
 				}
@@ -15,4 +22,3 @@ export default function QuestionList(props) {
 		</div>
 	);
 }
-

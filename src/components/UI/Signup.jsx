@@ -11,13 +11,13 @@ export default function Signup() {
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
 
-	const { signup, currentUser } = useAuth();
+	const { signup, currentUser, setCurrentUser } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
-	const history = useNavigate();
+	const navigate = useNavigate();
 
 	if (currentUser) {
-		history("/");
+		navigate("/");
 	}
 
 	const handleSubmit = async (e) => {
@@ -28,14 +28,13 @@ export default function Signup() {
 		} else {
 			setLoading(true);
 			setError("");
-			if (
-				signup(
-					nicknameRef.current.value,
-					emailRef.current.value,
-					passwordRef.current.value
-				)
-			) {
-				history("/");
+			const check = signup(
+				nicknameRef.current.value,
+				emailRef.current.value,
+				passwordRef.current.value
+			);
+			if (check) {
+				navigate("/");
 			} else {
 				setError("Account already exists");
 				const timer = setTimeout(() => {

@@ -5,24 +5,31 @@ import QuestionList from "./QuestionList";
 import Scorebox from "./Scorebox";
 import Logo from "../UI/Logo";
 import { decode } from "html-entities";
-import { useAuth } from "../../contexts/AuthContext";
+
+import EndGame from "./EndGame";
 
 export default function Game() {
-	const [gameStart, setGameStart] = useState(true);
-	const [customizingQuiz, setCustomizingQuiz] = useState(false);
 	const [urlApi, setUrlApi] = useState("");
 	const [customButton, setCustomButton] = useState({});
-	const [questions, setQuestions] = useState([]);
-	const [score, setScore] = useState(0);
-	const [current, setCurrent] = useState(0);
 	const [loading, setLoading] = useState(undefined);
-	const [elapsedTime, setElapsedTime] = useState(0);
-	const [progress, setProgress] = useState(0);
-	const { currentUser } = useAuth();
+	const [settings, setSettings] = useState({
+		gameLoaded: true,
+		gameSettings: false,
+		gameQuestions: [],
+		gameCurrentQuestion: 0,
+		playerScore: 0,
+		gameTime: 0,
+		gameTimeBar: 0,
+	});
 
 	const startTrivia = () => {
-		setGameStart(false);
-		setCustomizingQuiz(true);
+		setSettings((prevSettings) => {
+			return {
+				...prevSettings,
+				gameLoaded: false,
+				gameSettings: true,
+			};
+		});
 	};
 
 	const getData = (data) => {
@@ -30,7 +37,12 @@ export default function Game() {
 			let url = `http://162.19.27.138/api.php?level=${data.levels}&category=${data.categories}&amount=10`;
 			setUrlApi(url);
 			setCustomButton({});
-			setCustomizingQuiz(false);
+			setSettings((prevSettings) => {
+				return {
+					...prevSettings,
+					gameSettings: false,
+				};
+			});
 		} else {
 			setCustomButton({
 				animation: "wiggle 500ms",
@@ -57,7 +69,7 @@ export default function Game() {
 	useEffect(() => {
 		setLoading(true);
 		fetch(urlApi)
-			.then((res) => res.json())
+			.then(async (res) => await res.json())
 			.then((data) => {
 				const Data = data.map((item, index) => {
 					const correctAwnser = decodeHtmlEntities(
@@ -86,17 +98,28 @@ export default function Game() {
 						})),
 					};
 				});
-				setQuestions(Data);
+
+				setSettings((prevSettings) => {
+					return {
+						...prevSettings,
+						gameQuestions: Data,
+					};
+				});
 			})
 			.catch((err) => console.log(err))
 			.finally(() => setLoading(false));
 	}, [urlApi]);
 
 	useEffect(() => {
-		if (elapsedTime > 59) {
-			console.log("time over");
+		if (settings.gameTime > 59) {
+			setSettings((prevSettings) => {
+				return {
+					...prevSettings,
+					gameCurrentQuestion: 100,
+				};
+			});
 		}
-	}, [elapsedTime]);
+	}, [settings.gameTime]);
 
 	if (loading) {
 		return (
@@ -105,38 +128,28 @@ export default function Game() {
 			</div>
 		);
 	}
-	
+
 	return (
 		<section>
 			<div className="game-container">
-				{gameStart ? (
+				{settings.gameLoaded ? (
 					<Trivia startTrivia={startTrivia} />
 				) : (
-					customizingQuiz && (
+					settings.gameSettings && (
 						<CategoriesLevel getData={getData} customButton={customButton} />
 					)
 				)}
-				{!gameStart && !customizingQuiz && (
+				{!settings.gameLoaded && !settings.gameSettings && (
 					<div className="quiz-container">
 						<Logo />
-						<Scorebox
-							questions={questions}
-							score={score}
-							current={current}
-							loading={loading}
-							progress={progress}
-							elapsedTime={elapsedTime}
-							setProgress={setProgress}
-							setElapsedTime={setElapsedTime}
-						/>
-						<QuestionList
-							questions={questions}
-							score={score}
-							current={current}
-							loading={loading}
-							setCurrent={setCurrent}
-							setScore={setScore}
-						/>
+						{settings.gameCurrentQuestion < settings.gameQuestions.length ? (
+							<>
+								<Scorebox settings={settings} setSettings={setSettings} />
+								<QuestionList settings={settings} setSettings={setSettings} />
+							</>
+						) : (
+							<EndGame settings={settings} />
+						)}
 					</div>
 				)}
 			</div>

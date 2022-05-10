@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
-export default function Question(props) {
-	const { question } = props;
-
+export default function Question({ question, settings, setSettings }) {
+	const correctRef = useRef();
 	const [customButton, setCustomButton] = useState({});
 	const [customButton2, setCustomButton2] = useState({});
 	const [loading, setLoading] = useState(false);
@@ -10,26 +9,43 @@ export default function Question(props) {
 	const onChange = (event, choice) => {
 		event.preventDefault();
 		setLoading(true);
-		const { setCurrent, setScore, question } = props;
+
 		if (choice === question.correct) {
 			event.target.style.backgroundColor = "#7ee695";
 			event.target.style.border = "1px solid #7ee695";
 
 			setTimeout(() => {
-				setScore(props.score + 1);
-				setCurrent(props.current + 1);
+				setSettings((prevSettings) => {
+					return {
+						...prevSettings,
+						playerScore: prevSettings.playerScore + 1,
+						gameCurrentQuestion: prevSettings.gameCurrentQuestion + 1,
+					};
+				});
+
 				setLoading(false);
 			}, 1000);
 		} else if (choice !== question.correct) {
 			event.target.style.backgroundColor = "#fa8e8e";
 			event.target.style.color = "#fff";
 			event.target.style.border = "1px solid #fa8e8e";
+			correctRef.current.style.backgroundColor = "rgba(187, 255, 180, 0.449)";
 			setTimeout(() => {
-				setCurrent(props.current + 1);
+				setSettings((prevSettings) => {
+					return {
+						...prevSettings,
+						gameCurrentQuestion: prevSettings.gameCurrentQuestion + 1,
+					};
+				});
 				setLoading(false);
 			}, 1000);
 		} else {
-			setCurrent(props.current + 1);
+			setSettings((prevSettings) => {
+				return {
+					...prevSettings,
+					gameCurrentQuestion: prevSettings.gameCurrentQuestion + 1,
+				};
+			});
 			setLoading(false);
 		}
 
@@ -61,6 +77,7 @@ export default function Question(props) {
 								disabled={loading}
 								onClick={(event) => onChange(event, choice.text)}
 								key={index}
+								ref={question.correct ? correctRef : null}
 							>
 								{choice.text}
 							</button>

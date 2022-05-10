@@ -47,6 +47,9 @@ main {
 	margin-left: 5rem;
 	padding: 1rem;
 }
+.color-red {
+	color: #f00;
+}
 /*-------------*/
 /*------------- Navbar------------ */
 .navbar::-webkit-scrollbar {
@@ -105,10 +108,10 @@ main {
 .topBar {
 	display: flex;
 	align-items: center;
-    right: 1%;
+	right: 1%;
 	top: 1%;
 	padding-left: 13px;
-	position: fixed;
+	position: absolute;
 	background-color: var(--bg-secondary);
 	filter: opacity(0.8);
 	border-radius: 24px;
@@ -548,6 +551,12 @@ details[open] .faq_summary:after {
 	-webkit-transform: translate3d(0, 0, 0);
 	-moz-transform: translate3d(0, 0, 0);
 }
+.news-card:active .news-card_details-wrapper {
+	max-height: 20rem !important;
+	opacity: 1 !important;
+	transition: max-height 1.5s ease, opacity 1s ease !important;
+}
+
 .news-card::before {
 	content: "";
 	position: absolute;
@@ -575,6 +584,7 @@ details[open] .faq_summary:after {
 	display: block;
 	object-fit: cover;
 	transition: transform 3s ease;
+	opacity: 0.8;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	position: relative;
@@ -583,7 +593,7 @@ details[open] .faq_summary:after {
 .news-card_text-wrapper {
 	position: absolute;
 	bottom: 0rem;
-	padding: 1rem;
+	width: 100%;
 	color: white;
 	/* background-color: rgba(0, 0, 0, 0.4);
 	*/
@@ -592,6 +602,7 @@ details[open] .faq_summary:after {
 .news-card_title {
 	transition: color 1s ease;
 	margin-bottom: 0.5rem;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 .news-card_post-date {
 	font-size: 0.7rem;
@@ -603,6 +614,7 @@ details[open] .faq_summary:after {
 	opacity: 0;
 	transition: max-height 1.5s ease, opacity 1s ease;
 }
+
 .news-card_excerpt {
 	font-weight: 300;
 }
@@ -643,17 +655,17 @@ details[open] .faq_summary:after {
 	.news-card {
 		height: 20rem !important;
 	}
-	.news-card:hover .news-card:after .news-card_details-wrapper {
+	.news-card:hover .news-card_details-wrapper {
 		max-height: 20rem !important;
 		opacity: 1 !important;
 	}
-	.news-card:hover .news-card:after .news-card_text-wrapper {
+	.news-card:hover .news-card_text-wrapper {
 		background-color: rgba(0, 0, 0, 0.6) !important;
 	}
-	.news-card:hover .news-card:after .news-card_title {
+	.news-card.option:hover .news-card_title {
 		color: yellow !important;
 	}
-	.news-card:hover .news-card:after .news-card_image {
+	.news-card:hover .news-card_image {
 		transform: scale(1.2) !important;
 		z-index: -1 !important;
 	}
@@ -765,4 +777,8 @@ details[open] .faq_summary:after {
 
 .google-btn:hover {
 	cursor: pointer;
+}
+
+.progress-ring__circle {
+	stroke-dasharray: 10 20;
 }
