@@ -38,7 +38,7 @@ export default function UpdateProfile() {
 			setLoading(false);
 		}
 	};
-
+	console.log(currentUser);
 	return (
 		<section>
 			<Logo />

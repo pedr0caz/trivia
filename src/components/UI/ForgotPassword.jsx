@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useAuth } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
-
+import Logo from "../UI/Logo";
 export default function ForgotPassword() {
 	const emailRef = useRef();
 	const { resetPassword } = useAuth();
@@ -26,10 +26,12 @@ export default function ForgotPassword() {
 	}
 
 	return (
+		<section>
+		<Logo />
 		<div className="box">
 			<div>
 				<>
-					<h2>Password Reset</h2>
+					<h1>Password Reset</h1>
 					{error && { error }}
 					{message && { message }}
 					<form onSubmit={handleSubmit}>
@@ -50,5 +52,6 @@ export default function ForgotPassword() {
 				Need an account? <Link to="/signup">Sign Up</Link>
 			</div>
 		</div>
+		</section>
 	);
 }

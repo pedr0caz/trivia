@@ -21,12 +21,12 @@ export default function Home() {
 			setError("Failed to log out");
 		}
 	};
-
+	
 	return (
 		<section>
 			<Logo />
 			<div>
-				<h2>Profile</h2>
+				<h1>Profile</h1>
 				{error && { error }}
 				<strong>Email:</strong> {currentUser.email}
 				<Link to="/update-profile">Update Profile</Link>

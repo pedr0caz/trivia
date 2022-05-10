@@ -6,7 +6,7 @@ export default function Ranking() {
 		<section>
 			<Logo />
 			<div class="table-ranking">
-				Ranking
+				<h1>Ranking</h1>
 				<div class="table-wrapper">
 					<table>
 						<thead>

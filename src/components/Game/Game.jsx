@@ -5,6 +5,7 @@ import QuestionList from "./QuestionList";
 import Scorebox from "./Scorebox";
 import Logo from "../UI/Logo";
 import { decode } from "html-entities";
+import { useAuth } from "../../contexts/AuthContext";
 
 export default function Game() {
 	const [gameStart, setGameStart] = useState(true);
@@ -17,6 +18,7 @@ export default function Game() {
 	const [loading, setLoading] = useState(undefined);
 	const [elapsedTime, setElapsedTime] = useState(0);
 	const [progress, setProgress] = useState(0);
+	const { currentUser } = useAuth();
 
 	const startTrivia = () => {
 		setGameStart(false);
@@ -90,13 +92,11 @@ export default function Game() {
 			.finally(() => setLoading(false));
 	}, [urlApi]);
 
-	
 	useEffect(() => {
-		if(elapsedTime > 59)  {
-			console.log('time over')
+		if (elapsedTime > 59) {
+			console.log("time over");
 		}
-	
-	},[elapsedTime])
+	}, [elapsedTime]);
 
 	if (loading) {
 		return (
@@ -105,7 +105,7 @@ export default function Game() {
 			</div>
 		);
 	}
-
+	
 	return (
 		<section>
 			<div className="game-container">

@@ -14,7 +14,7 @@ export default function Faq() {
 							</span>
 						</summary>
 						<p class="faq_text">
-							No ! Theres no ads or any paid content/subscrition on our game! 
+							No ! Theres no ads or any paid content/subscrition on our game!
 						</p>
 					</details>
 					<details class="faq_detail">
@@ -24,7 +24,7 @@ export default function Faq() {
 							</span>
 						</summary>
 						<p class="faq_text">
-							So we can keep your score points for our ranking system! 
+							So we can keep your score points for our ranking system!
 						</p>
 					</details>
 					<details class="faq_detail">
@@ -37,7 +37,7 @@ export default function Faq() {
 						</p>
 						<p class="faq_text">A reset link will be emailed to you.</p>
 					</details>
-					
+
 					<details class="faq_detail">
 						<summary class="faq_summary">
 							<span class="faq_question">
@@ -45,7 +45,7 @@ export default function Faq() {
 							</span>
 						</summary>
 						<p class="faq_text">
-							Our contact form or email support is available 24/7. 
+							Our contact form or email support is available 24/7.
 						</p>
 					</details>
 				</div>

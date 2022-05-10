@@ -10,7 +10,6 @@ export default function Nav() {
 		<>
 			<nav className="navbar">
 				<ul className="navbar-nav">
-					
 					<li className="nav-item">
 						<Link to="/" className="nav-link">
 							<i className="fi fi-rr-home"></i>
@@ -28,7 +27,7 @@ export default function Nav() {
 					<li className="nav-item">
 						<Link to="/ranking" className="nav-link">
 							<i className="fi fi-rr-star"></i>
-							
+
 							<span className="link-text">Ranking</span>
 						</Link>
 					</li>
@@ -53,6 +52,7 @@ export default function Nav() {
 			</nav>
 			{currentUser && (
 				<div className="topBar">
+					{currentUser.displayName}
 					<Link to="" onClick={() => logout()}>
 						<i className="fi fi-rr-sign-out"></i>
 					</Link>

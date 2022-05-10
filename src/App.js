@@ -25,15 +25,7 @@ function AppLogin() {
 					style={{ backgroundImage: "url(./images/bg.png)" }}
 				>
 					<Routes>
-						<Route
-							exact
-							path="/"
-							element={
-								<PrivateRoute>
-									<Home />
-								</PrivateRoute>
-							}
-						/>
+						
 						<Route
 							path="/update-profile"
 							element={
@@ -57,6 +49,7 @@ function AppLogin() {
 						<Route path="/forgot-password" element={<ForgotPassword />} />
 						<Route path="/ranking" element={<Ranking />} />
 						<Route path="/faq" element={<Faq />} />
+						<Route path="/" element={<Home />} />
 					</Routes>
 				</main>
 			</AuthProvider>
