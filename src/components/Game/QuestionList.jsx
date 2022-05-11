@@ -6,7 +6,6 @@ export default function QuestionList({ settings, setSettings }) {
 		<div className="questions">
 			{settings.gameQuestions.map((question) => {
 				if (question.id === settings.gameCurrentQuestion) {
-					console.log("ok")
 					return (
 						<Question
 							question={question}
