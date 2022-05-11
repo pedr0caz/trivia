@@ -20,8 +20,7 @@ import {
 	increment,
 	setDoc,
 	collection,
-	query,
-	where,
+	
 	getDocs
 } from "firebase/firestore";
 const AuthContext = React.createContext();

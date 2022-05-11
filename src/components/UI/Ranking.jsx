@@ -6,7 +6,7 @@ export default function Ranking() {
 	const { getNotes } = useAuth();
 	const [loading, setLoading] = useState(undefined);
 	const [ranking, setRanking] = useState(null);
-	
+
 	const details = [
 		{ name: "pos", display: "#" },
 		{ name: "displayName", display: "Player" },
@@ -105,25 +105,21 @@ function SearchTable(props) {
 		let direction = isSorted ? 1 : -1;
 		let sort = (a, b) => {
 			if (typeof a[value] === "number" && typeof b[value] === "number") {
-				{
-					if (a[value] > b[value]) {
-						return direction;
-					}
-					if (a[value] < b[value]) {
-						return direction * -1;
-					}
-					return 0;
+				if (a[value] > b[value]) {
+					return direction;
 				}
+				if (a[value] < b[value]) {
+					return direction * -1;
+				}
+				return 0;
 			} else {
-				{
-					if (a[value].toLowerCase() > b[value].toLowerCase()) {
-						return direction;
-					}
-					if (a[value].toLowerCase() < b[value].toLowerCase()) {
-						return direction * -1;
-					}
-					return 0;
+				if (a[value].toLowerCase() > b[value].toLowerCase()) {
+					return direction;
 				}
+				if (a[value].toLowerCase() < b[value].toLowerCase()) {
+					return direction * -1;
+				}
+				return 0;
 			}
 		};
 
@@ -260,11 +256,9 @@ function Pagination(props) {
 
 		let startPage, endPage;
 		if (totalPages <= 3) {
-		
 			startPage = 1;
 			endPage = totalPages;
 		} else {
-			
 			if (currentPage <= 2) {
 				startPage = 1;
 				endPage = 3;
@@ -317,7 +311,7 @@ function Pagination(props) {
 					className={pager.currentPage === page ? "active" : ""}
 					onClick={() => setPage(page)}
 				>
-					<a>{page}</a>
+					{page}
 				</li>
 			))}
 		</ul>

@@ -1,8 +1,6 @@
 import React from "react";
 
-const styles = {
-	color: "#FFF",
-};
+
 const cleanPercentage = (percentage) => {
 	const tooLow = !Number.isFinite(+percentage) || percentage < 0;
 	const tooHigh = percentage > 100;

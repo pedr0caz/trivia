@@ -11,7 +11,7 @@ export default function Signup() {
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
 
-	const { signup, currentUser, setCurrentUser } = useAuth();
+	const { signup, currentUser} = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();

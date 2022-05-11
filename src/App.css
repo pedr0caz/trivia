@@ -485,7 +485,7 @@ button:active {
 }
 .faq_summary:after {
 	display: inline-block;
-	content: url("/svg/icon-arrow-down.svg");
+	content: url("../public/svg/icon-arrow-down.svg");
 	background-repeat: no-repeat;
 	background-position: right center;
 	text-align: right;
@@ -496,7 +496,7 @@ details[open] .faq_summary:after {
 	width: 18px;
 	height: 10px;
 	content: "";
-	background-image: url("/svg/icon-arrow-down.svg");
+	background-image: url("../public/svg/icon-arrow-down.svg");
 	background-repeat: no-repeat;
 	background-position: center right;
 	transform: scaleY(-1);
@@ -831,13 +831,12 @@ details[open] .faq_summary:after {
 	padding: 4px 0;
 	width: 30px;
 	text-align: center;
+	color: #000000;
 	margin-left: 5px;
 	box-shadow: rgba(0, 0, 0, 0.14) 1px 1px 2px 0px,
 		rgba(0, 0, 0, 0.2) 0px 2px 1px -5px, rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
 }
 .pagination li.active {
 	background: #f7dd79;
-}
-.pagination li.active a {
 	color: #000000;
 }
