@@ -1,9 +1,8 @@
 import React, { useState, useRef } from "react";
 
-export default function Question({ question, settings, setSettings }) {
+export default function Question({ question, setSettings }) {
 	const correctRef = useRef();
-	const [customButton, setCustomButton] = useState({});
-	const [customButton2, setCustomButton2] = useState({});
+
 	const [loading, setLoading] = useState(false);
 
 	const onChange = (event, choice) => {
@@ -48,19 +47,6 @@ export default function Question({ question, settings, setSettings }) {
 			});
 			setLoading(false);
 		}
-
-		if (choice) {
-			if (choice !== question.correct) {
-				setCustomButton2({
-					backgroundColor: "#7ee695",
-					border: "1px solid #7ee695",
-				});
-			}
-			setCustomButton({
-				color: "#8f96bd",
-				border: "1px solid #8f96bd",
-			});
-		}
 	};
 
 	return (
@@ -73,7 +59,6 @@ export default function Question({ question, settings, setSettings }) {
 						return (
 							<button
 								className="option_awnsers"
-								style={question.correct ? customButton : customButton2}
 								disabled={loading}
 								onClick={(event) => onChange(event, choice.text)}
 								key={index}

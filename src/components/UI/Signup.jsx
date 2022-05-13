@@ -11,7 +11,7 @@ export default function Signup() {
 	const passwordRef = useRef();
 	const passwordConfirmRef = useRef();
 
-	const { signup, currentUser} = useAuth();
+	const { signup, currentUser } = useAuth();
 	const [error, setError] = useState("");
 	const [loading, setLoading] = useState(false);
 	const navigate = useNavigate();
@@ -49,45 +49,36 @@ export default function Signup() {
 	return (
 		<section>
 			<Logo />
-			<div className="box">
-				<div>
-					<div>
-						<h1>Sign Up</h1>
-						{error && <div>{error}</div>}
-						<form onSubmit={handleSubmit}>
-							<div id="email">
-								<label>Nickname</label>
-								<input type="text" ref={nicknameRef} required minLength={4} />
-							</div>
-							<div id="email">
-								<label>Email</label>
-								<input type="email" ref={emailRef} required />
-							</div>
-							<div id="password">
-								<label>Password</label>
-								<input
-									type="password"
-									ref={passwordRef}
-									required
-									minLength={8}
-								/>
-							</div>
-							<div id="password-confirm">
-								<label>Password Confirmation</label>
-								<input
-									type="password"
-									ref={passwordConfirmRef}
-									required
-									minLength={8}
-								/>
-							</div>
-							<button disabled={loading} type="submit">
-								Sign Up
-							</button>
-						</form>
-					</div>
-				</div>
-				<div>
+			<div className="form-container box">
+				<div className="inner-container">
+					<h1>Sign Up</h1>
+					{error && <div>{error}</div>}
+					<form onSubmit={handleSubmit}>
+						<div id="email">
+							<label>Nickname</label>
+							<input type="text" ref={nicknameRef} required minLength={4} />
+						</div>
+						<div id="email">
+							<label>Email</label>
+							<input type="email" ref={emailRef} required />
+						</div>
+						<div id="password">
+							<label>Password</label>
+							<input type="password" ref={passwordRef} required minLength={8} />
+						</div>
+						<div id="password-confirm">
+							<label>Password Confirmation</label>
+							<input
+								type="password"
+								ref={passwordConfirmRef}
+								required
+								minLength={8}
+							/>
+						</div>
+						<button disabled={loading} type="submit">
+							Sign Up
+						</button>
+					</form>
 					Already have an account? <Link to="/login">Log In</Link>
 				</div>
 			</div>

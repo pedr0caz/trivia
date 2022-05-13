@@ -12,6 +12,7 @@ import Nav from "./components/UI/Nav";
 import Game from "./components/Game/Game";
 import Ranking from "./components/UI/Ranking";
 import Faq from "./components/UI/Faq"
+import Contact from "./components/UI/Contact"
 
 import "./App.css";
 
@@ -50,6 +51,7 @@ function AppLogin() {
 						<Route path="/ranking" element={<Ranking />} />
 						<Route path="/faq" element={<Faq />} />
 						<Route path="/" element={<Home />} />
+						<Route path="/contact" element={<Contact />} />
 					</Routes>
 				</main>
 			</AuthProvider>

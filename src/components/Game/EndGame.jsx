@@ -14,7 +14,7 @@ export default function EndGame({settings}) {
 			<>
 				<center>
 					<h1>You got {settings.playerScore} correct answers</h1>
-					<Pie percentage={percent} colour="#d4ac0d" />
+					<Pie percentage={percent} colour="#f7dd79" />
 				</center>
 				<center>You added {settings.playerScore} points to your total points </center>
 				<center>Total Points {settings.playerScore} </center>

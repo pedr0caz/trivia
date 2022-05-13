@@ -68,9 +68,9 @@ export default function CategoriesLevel({ getData, customButton }) {
 				style={
 					category.isSelected
 						? {
-								backgroundColor: "#d4ac0d",
-								color: "#F5F7FB",
-								border: "1px solid #d4ac0d",
+								backgroundColor: "#f7dd79",
+								color: "black",
+								border: "1px solid #f7dd79",
 						  }
 						: null
 				}
@@ -89,9 +89,9 @@ export default function CategoriesLevel({ getData, customButton }) {
 				style={
 					item.isSelected
 						? {
-								backgroundColor: "#d4ac0d",
-								color: "#F5F7FB",
-								border: "1px solid #d4ac0d",
+								backgroundColor: "#f7dd79",
+								color: "black",
+								border: "1px solid #f7dd79",
 						  }
 						: null
 				}
@@ -109,7 +109,7 @@ export default function CategoriesLevel({ getData, customButton }) {
 			</div>
 		);
 	}
-	
+
 	return (
 		<div className="category-container">
 			<h3 className="category-header">Select a category</h3>

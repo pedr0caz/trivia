@@ -21,18 +21,20 @@ export default function Home() {
 			setError("Failed to log out");
 		}
 	};
-	
+
 	return (
 		<section>
 			<Logo />
-			<div>
-				<h1>Profile</h1>
-				{error && { error }}
-				<strong>Email:</strong> {currentUser.email}
-				<Link to="/update-profile">Update Profile</Link>
-			</div>
+			<div className="form-container box">
+				<div className="inner-container">
+					<h1>Profile</h1>
+					{error && { error }}
+					<strong>Email:</strong> {currentUser.email}
+					<Link to="/update-profile">Update Profile</Link>
+				</div>
 
-			<button onClick={handleLogout}>Log Out</button>
+				<button onClick={handleLogout}>Log Out</button>
+			</div>
 		</section>
 	);
 }

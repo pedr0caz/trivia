@@ -5,6 +5,7 @@ import QuestionList from "./QuestionList";
 import Scorebox from "./Scorebox";
 import Logo from "../UI/Logo";
 import { decode } from "html-entities";
+import {Buffer} from 'buffer';
 
 import EndGame from "./EndGame";
 

@@ -45,42 +45,35 @@ export default function Login() {
 	return (
 		<section>
 			<Logo />
-			<div className="box">
-				<div>
-					<div>
-						<h1>Log In</h1>
-						{error && { error }}
-						<form onSubmit={handleSubmit}>
-							<div id="email">
-								<label>Email</label>
-								<input type="email" ref={emailRef} required />
-							</div>
-							<div id="password">
-								<label>Password</label>
-								<input type="password" ref={passwordRef} required />
-							</div>
-							<button disabled={loading} type="submit">
-								Log In
-							</button>
-							<small>or login with:</small>
-							<div className="google-btn" onClick={handleSubmitWithGoogle}>
-								<div className="google-icon-wrapper">
-									<img
-										className="google-icon"
-										src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
-										alt="Google Login"
-									/>
-								</div>
-								
-							</div>
-						</form>
-
-						<div>
-							<Link to="/forgot-password">Forgot Password?</Link>
+			<div className="form-container box">
+				<div className="inner-container">
+					<h1>Log In</h1>
+					{error && { error }}
+					<form onSubmit={handleSubmit}>
+						<div id="email">
+							<label>Email</label>
+							<input type="email" ref={emailRef} required />
 						</div>
-					</div>
-				</div>
-				<div>
+						<div id="password">
+							<label>Password</label>
+							<input type="password" ref={passwordRef} required />
+						</div>
+						<button disabled={loading} type="submit">
+							Log In
+						</button>
+						<small>or login with:</small>
+						<div className="google-btn" onClick={handleSubmitWithGoogle}>
+							<div className="google-icon-wrapper">
+								<img
+									className="google-icon"
+									src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+									alt="Google Login"
+								/>
+							</div>
+						</div>
+					</form>
+					<Link to="/forgot-password">Forgot Password?</Link>
+					<br />
 					Need an account? <Link to="/signup">Sign Up</Link>
 				</div>
 			</div>

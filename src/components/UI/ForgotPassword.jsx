@@ -23,35 +23,33 @@ export default function ForgotPassword() {
 		}
 
 		setLoading(false);
-	}
+	};
 
 	return (
 		<section>
-		<Logo />
-		<div className="box">
-			<div>
-				<>
-					<h1>Password Reset</h1>
-					{error && { error }}
-					{message && { message }}
-					<form onSubmit={handleSubmit}>
-						<div id="email">
-							<label>Email</label>
-							<input type="email" ref={emailRef} required />
+			<Logo />
+			<div className="form-container box">
+				<div className="inner-container">
+					<>
+						<h1>Password Reset</h1>
+						{error && { error }}
+						{message && { message }}
+						<form onSubmit={handleSubmit}>
+							<div id="email">
+								<label>Email</label>
+								<input type="email" ref={emailRef} required />
+							</div>
+							<button disabled={loading} type="submit">
+								Reset Password
+							</button>
+						</form>
+						<div>
+							<Link to="/login">Login</Link>
 						</div>
-						<button disabled={loading}  type="submit">
-							Reset Password
-						</button>
-					</form>
-					<div >
-						<Link to="/login">Login</Link>
-					</div>
-				</>
-			</div>
-			<div >
+					</>
 				Need an account? <Link to="/signup">Sign Up</Link>
+				</div>
 			</div>
-		</div>
 		</section>
 	);
 }

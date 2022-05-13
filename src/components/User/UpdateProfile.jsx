@@ -42,41 +42,41 @@ export default function UpdateProfile() {
 	return (
 		<section>
 			<Logo />
-			<div className="box">
-				<h1>Update Profile</h1>
-				{error && { error }}
-				<form onSubmit={handleSubmit}>
-					<div id="email">
-						<label>Email</label>
-						<input
-							type="email"
-							ref={emailRef}
-							required
-							defaultValue={currentUser.email}
-						/>
-					</div>
-					<div id="password">
-						<label>Password</label>
-						<input
-							type="password"
-							ref={passwordRef}
-							placeholder="Leave blank to keep the same"
-						/>
-					</div>
-					<div id="password-confirm">
-						<label>Password Confirmation</label>
-						<input
-							type="password"
-							ref={passwordConfirmRef}
-							placeholder="Leave blank to keep the same"
-						/>
-					</div>
-					<button disabled={loading} className="w-100" type="submit">
-						Update
-					</button>
-				</form>
+			<div className="form-container box">
+				<div className="inner-container">
+					<h1>Update Profile</h1>
+					{error && { error }}
+					<form onSubmit={handleSubmit}>
+						<div id="email">
+							<label>Email</label>
+							<input
+								type="email"
+								ref={emailRef}
+								required
+								defaultValue={currentUser.email}
+							/>
+						</div>
+						<div id="password">
+							<label>Password</label>
+							<input
+								type="password"
+								ref={passwordRef}
+								placeholder="Leave blank to keep the same"
+							/>
+						</div>
+						<div id="password-confirm">
+							<label>Password Confirmation</label>
+							<input
+								type="password"
+								ref={passwordConfirmRef}
+								placeholder="Leave blank to keep the same"
+							/>
+						</div>
+						<button disabled={loading} className="w-100" type="submit">
+							Update
+						</button>
+					</form>
 
-				<div>
 					<Link to="/">Cancel</Link>
 				</div>
 			</div>

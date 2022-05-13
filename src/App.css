@@ -9,7 +9,7 @@
 
 a {
 	text-decoration: none !important;
-	color: #d4ac0d;
+	color: #f7dd79;
 }
 a:visited {
 	text-decoration: none !important;
@@ -139,6 +139,7 @@ section {
 	border-radius: 20px 20px;
 }
 .box input[type="text"],
+.box textarea,
 .box input[type="email"],
 .box input[type="password"] {
 	border: 0;
@@ -146,7 +147,7 @@ section {
 	display: block;
 	margin: 5px auto;
 	text-align: center;
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	padding: 14px 10px;
 	width: 200px;
 	outline: none;
@@ -156,12 +157,14 @@ section {
 }
 .box input[type="text"]:focus,
 .box input[type="email"]:focus,
+.box textarea:focus,
 .box input[type="password"]:focus {
 	border-color: #a04000;
 	width: 250px;
 }
 .box input[type="text"]:hover,
-.box input[type="email"]:focus,
+.box input[type="email"]:hover,
+.box textarea:hover,
 .box input[type="password"]:hover {
 	border-color: #a04000;
 }
@@ -171,7 +174,7 @@ section {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	padding: 14px 40px;
 	outline: none;
 	color: white;
@@ -179,10 +182,10 @@ section {
 	cursor: pointer;
 }
 .box button[type="submit"]:focus {
-	border-color: #d4ac0d;
+	border-color: #f7dd79;
 }
 .box button[type="submit"]:hover {
-	background: #d4ac0d;
+	background: #f7dd79;
 	border-radius: 24px;
 }
 /* ------ Ranking Table ------ */
@@ -192,7 +195,7 @@ section {
 	margin-right: auto;
 }
 .table-wrapper {
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	border-radius: 5px;
 	overflow: hidden;
 	margin-top: 10px;
@@ -279,7 +282,7 @@ button {
 	display: block;
 	margin: 20px auto;
 	text-align: center;
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	border-radius: 24px;
 	padding: 14px 40px;
 	outline: none;
@@ -290,7 +293,7 @@ button {
 }
 button:hover {
 	transform: scale(1.1);
-	background-color: #ffcc00;
+	background-color: #f7dd79;
 	color: white;
 }
 button:active {
@@ -343,7 +346,7 @@ button:active {
 }
 .option {
 	font-weight: 500;
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	padding: 0.3em 1.1em;
 	min-width: 65px;
 	border-radius: 15px;
@@ -356,7 +359,7 @@ button:active {
 	transition: background-color 200ms, color 200ms, border 200ms;
 }
 .option:hover {
-	background-color: #ffcc00;
+	background-color: #f7dd79;
 	color: #f5f7fb;
 	border: 1px solid #4d5b9e;
 }
@@ -365,7 +368,7 @@ button:active {
 	margin: auto;
 	border: 10px solid #f3e8bc;
 	border-radius: 50%;
-	border-top: 10px solid #d4ac0d;
+	border-top: 10px solid #f7dd79;
 	width: 100px;
 	height: 100px;
 	animation: spinner 1s linear infinite;
@@ -401,7 +404,7 @@ button:active {
 	font-size: 1rem;
 	padding: 1rem 2rem;
 	margin-top: 0.625rem;
-	border: 2px solid #d4ac0d;
+	border: 2px solid #f7dd79;
 	cursor: pointer;
 	margin: 0.8vh;
 	border-radius: 50rem !important;
@@ -839,4 +842,102 @@ details[open] .faq_summary:after {
 .pagination li.active {
 	background: #f7dd79;
 	color: #000000;
+}
+
+.form-container {
+	margin: auto;
+	margin-top: 3vh;
+	background-color: rgb(129, 129, 129, 0.3);
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	width: 47vh;
+}
+
+.inner-container {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 20px;
+}
+.social-container {
+	padding: 20px;
+}
+.social-container i {
+	cursor: pointer;
+	color: #000;
+	background: #f7dd79;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	font-family: fontawesome;
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 28px;
+	padding-top: 12px;
+	margin: 0 7px;
+	-o-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-font-smoothing: antialiased;
+}
+
+.social-container i:hover {
+	cursor: pointer;
+	color: #fff;
+	background: #db6e82;
+	border-radius: 4px;
+	text-align: center;
+	text-decoration: none;
+	font-family: fontawesome;
+	position: relative;
+	display: inline-block;
+	width: 40px;
+	height: 28px;
+	padding-top: 12px;
+	margin: 0 2px;
+	-o-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+	-webkit-font-smoothing: antialiased;
+}
+
+.social-container span {
+	color: #666;
+	position: absolute;
+	font-family: sans-serif;
+	bottom: 0;
+	left: -25px;
+	right: -25px;
+	padding: 5px 7px;
+	z-index: -1;
+	font-size: 14px;
+	border-radius: 2px;
+	background: #fff;
+	visibility: hidden;
+	opacity: 0;
+	-o-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-webkit-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	-moz-transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.social-container span:before {
+	content: "";
+	width: 0;
+	height: 0;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #fff;
+	position: absolute;
+	bottom: -5px;
+	left: 40px;
+}
+
+.social-container i:hover span {
+	bottom: 50px;
+	visibility: visible;
+	opacity: 1;
 }
