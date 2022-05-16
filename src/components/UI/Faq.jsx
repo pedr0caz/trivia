@@ -29,7 +29,9 @@ export default function Faq() {
 					</details>
 					<details className="faq_detail">
 						<summary className="faq_summary">
-							<span className="faq_question">How do I reset my password?</span>
+							<span className="faq_question">
+								How do I reset my password ?
+							</span>
 						</summary>
 						<p className="faq_text">
 							Click “Forgot password” from the login page or “Change password”

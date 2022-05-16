@@ -13,7 +13,8 @@ body {
 	background-color: var(--bg-primary);
 	background-image: url(/public/images/bg.png);
 	background-repeat: repeat;
-	background-position: center center;
+	
+	
 	margin: 0;
 	padding: 0;
 	font-family: "Russo One", sans-serif;
@@ -824,7 +825,7 @@ details[open] .faq_summary:after {
 .form-container {
 	margin: auto;
 	margin-top: 3vh;
-	background-color: rgb(129, 129, 129, 0.3);
+	background-color: rgb(129, 129, 129, 0.6);
 	justify-content: center;
 	align-items: center;
 	border-radius: 25px;

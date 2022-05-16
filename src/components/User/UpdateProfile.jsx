@@ -76,7 +76,7 @@ export default function UpdateProfile() {
 								placeholder="Leave blank to keep the same"
 							/>
 						</div>
-						<button disabled={loading} className="w-100" type="submit">
+						<button disabled={loading} type="submit">
 							Update
 						</button>
 					</form>
