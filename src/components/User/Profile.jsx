@@ -20,6 +20,11 @@ export default function Home() {
 		} catch (e) {
 			setError("Failed to log out");
 		}
+
+		const timer = setTimeout(() => {
+			setError("");
+		}, 1500);
+		return () => clearTimeout(timer);
 	};
 
 	return (
@@ -28,7 +33,7 @@ export default function Home() {
 			<div className="form-container box">
 				<div className="inner-container">
 					<h1>Profile</h1>
-					{error && { error }}
+					{error && error }
 					<strong>Email:</strong> {currentUser.email}
 					<Link to="/update-profile">Update Profile</Link>
 				</div>

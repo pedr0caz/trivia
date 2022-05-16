@@ -23,8 +23,11 @@ export default function Login() {
 		} catch (e) {
 			setError("Failed to log in");
 			setLoading(false);
-		} finally {
 		}
+		const timer = setTimeout(() => {
+			setError("");
+		}, 1500);
+		return () => clearTimeout(timer);
 	};
 
 	const handleSubmitWithGoogle = async (e) => {
@@ -38,8 +41,12 @@ export default function Login() {
 		} catch (e) {
 			setError("Failed to log in");
 			setLoading(false);
-		} finally {
 		}
+
+		const timer = setTimeout(() => {
+			setError("");
+		}, 1500);
+		return () => clearTimeout(timer);
 	};
 
 	return (
@@ -48,7 +55,7 @@ export default function Login() {
 			<div className="form-container box">
 				<div className="inner-container">
 					<h1>Log In</h1>
-					{error && { error }}
+					{error && error}
 					<form onSubmit={handleSubmit}>
 						<div id="email">
 							<label>Email</label>

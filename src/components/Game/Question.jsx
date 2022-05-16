@@ -52,7 +52,15 @@ export default function Question({ question, setSettings }) {
 	return (
 		<div>
 			<div className="question">
-				<h1 className="question_title">{question.text}</h1>
+				<h1
+					className="question_title"
+					onCopy={(e) => {
+						e.preventDefault();
+						return false;
+					}}
+				>
+					{question.text}
+				</h1>
 
 				<div className="question_options">
 					{question.choices.map((choice, index) => {

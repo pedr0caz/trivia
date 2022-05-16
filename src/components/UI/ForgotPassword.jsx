@@ -23,6 +23,11 @@ export default function ForgotPassword() {
 		}
 
 		setLoading(false);
+		const timer = setTimeout(() => {
+			setError("");
+			setMessage("");
+		}, 1500);
+		return () => clearTimeout(timer);
 	};
 
 	return (
@@ -32,8 +37,8 @@ export default function ForgotPassword() {
 				<div className="inner-container">
 					<>
 						<h1>Password Reset</h1>
-						{error && { error }}
-						{message && { message }}
+						{error && error}
+						{message && message}
 						<form onSubmit={handleSubmit}>
 							<div id="email">
 								<label>Email</label>
@@ -47,7 +52,7 @@ export default function ForgotPassword() {
 							<Link to="/login">Login</Link>
 						</div>
 					</>
-				Need an account? <Link to="/signup">Sign Up</Link>
+					Need an account? <Link to="/signup">Sign Up</Link>
 				</div>
 			</div>
 		</section>

@@ -32,11 +32,15 @@ export default function UpdateProfile() {
 				history("/");
 			}
 		} catch (e) {
-	
 			setError("Failed to update account");
 		} finally {
 			setLoading(false);
 		}
+
+		const timer = setTimeout(() => {
+			setError("");
+		}, 1500);
+		return () => clearTimeout(timer);
 	};
 
 	return (
@@ -45,7 +49,7 @@ export default function UpdateProfile() {
 			<div className="form-container box">
 				<div className="inner-container">
 					<h1>Update Profile</h1>
-					{error && { error }}
+					{error && error}
 					<form onSubmit={handleSubmit}>
 						<div id="email">
 							<label>Email</label>
