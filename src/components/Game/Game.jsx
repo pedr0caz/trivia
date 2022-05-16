@@ -5,7 +5,7 @@ import QuestionList from "./QuestionList";
 import Scorebox from "./Scorebox";
 import Logo from "../UI/Logo";
 import { decode } from "html-entities";
-import {Buffer} from 'buffer';
+import { Buffer } from "buffer";
 
 import EndGame from "./EndGame";
 
@@ -33,6 +33,20 @@ export default function Game() {
 		});
 	};
 
+	const endTrivia = () => {
+		setSettings((prevSettings) => {
+			return {
+				gameLoaded: false,
+				gameSettings: true,
+				gameQuestions: [],
+				gameCurrentQuestion: 0,
+				playerScore: 0,
+				gameTime: 0,
+				gameTimeBar: 0,
+			};
+		});
+	};
+
 	const getData = (data) => {
 		if (data.levels) {
 			let url = `http://162.19.27.138/api.php?level=${data.levels}&category=${data.categories}&amount=10`;
@@ -53,10 +67,7 @@ export default function Game() {
 	};
 
 	const reverseString = (str) => {
-		return str
-			.split("")
-			.reverse()
-			.join("");
+		return str.split("").reverse().join("");
 	};
 
 	const decodeBase64 = (str) => {
@@ -149,7 +160,7 @@ export default function Game() {
 								<QuestionList settings={settings} setSettings={setSettings} />
 							</>
 						) : (
-							<EndGame settings={settings} />
+							<EndGame settings={settings} startAgain={endTrivia} />
 						)}
 					</div>
 				)}

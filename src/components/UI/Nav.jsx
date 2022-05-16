@@ -48,6 +48,12 @@ export default function Nav() {
 							<span className="link-text">Info</span>
 						</Link>
 					</li>
+					<li className="nav-item">
+						<Link to="/contact" className="nav-link">
+							<i className="fi fi-rr-at"></i>
+							<span className="link-text">Contact us</span>
+						</Link>
+					</li>
 				</ul>
 			</nav>
 			{currentUser && (

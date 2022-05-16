@@ -3,7 +3,7 @@ import Logo from "./Logo";
 import { useAuth } from "../../contexts/AuthContext";
 
 export default function Ranking() {
-	const { getNotes } = useAuth();
+	const { getAllRanking } = useAuth();
 	const [loading, setLoading] = useState(undefined);
 	const [ranking, setRanking] = useState(null);
 
@@ -15,7 +15,7 @@ export default function Ranking() {
 
 	useEffect(() => {
 		setLoading(true);
-		getNotes()
+		getAllRanking()
 			.then(async (note) => {
 				const sort = note.sort((a, b) => b.points - a.points);
 
@@ -32,8 +32,9 @@ export default function Ranking() {
 			.finally(() => {
 				setLoading(false);
 			});
+		// eslint-disable-next-line
 	}, []);
-	console.log(ranking);
+
 	if (loading) {
 		return (
 			<div className="app">
@@ -65,7 +66,7 @@ function SearchTable(props) {
 			return accum;
 		}, {})
 	);
-	console.log(sorted);
+	
 	const onChangePage = (pageOfItems) => {
 		setTable((prevTable) => {
 			return {
@@ -143,7 +144,7 @@ function SearchTable(props) {
 
 	return (
 		<>
-			<div class="header">
+			<div className="header">
 				<Search search={search} />
 				<Pagination items={table.currentData} onChangePage={onChangePage} />
 			</div>
@@ -193,8 +194,8 @@ function SearchTable(props) {
 
 function Search(props) {
 	return (
-		<div class="search">
-			<input type="text" class="search__input" onKeyUp={props.search} />
+		<div className="search">
+			<input type="text" className="search__input" onKeyUp={props.search} />
 
 			<i className="search__icon fi fi-rr-search"></i>
 		</div>
@@ -213,7 +214,7 @@ function HeadTable(props) {
 							onClick={props.sort}
 							style={{ width: `${100 / props.details.length}%` }}
 						>
-							{item.display} <i class="fi fi-rr-sort"></i>
+							{item.display} <i className="fi fi-rr-sort"></i>
 						</th>
 					);
 				})}
@@ -295,6 +296,7 @@ function Pagination(props) {
 		if (props.items && props.items.length) {
 			setPage(props.initialPage);
 		}
+		// eslint-disable-next-line
 	}, [props.items]);
 
 	const pager = pagination.xPager;

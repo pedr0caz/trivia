@@ -11,8 +11,8 @@ import ForgotPassword from "./components/UI/ForgotPassword";
 import Nav from "./components/UI/Nav";
 import Game from "./components/Game/Game";
 import Ranking from "./components/UI/Ranking";
-import Faq from "./components/UI/Faq"
-import Contact from "./components/UI/Contact"
+import Faq from "./components/UI/Faq";
+import Contact from "./components/UI/Contact";
 
 import "./App.css";
 
@@ -21,12 +21,8 @@ function AppLogin() {
 		<Router>
 			<AuthProvider>
 				<Nav />
-				<main
-					className="wrapper"
-					style={{ backgroundImage: "url(./images/bg.png)" }}
-				>
+				<main className="wrapper">
 					<Routes>
-						
 						<Route
 							path="/update-profile"
 							element={

@@ -27,18 +27,19 @@ a:active {
 body {
 	color: var(--text-secondary);
 	background-color: var(--bg-primary);
+	background-image: url(/public/images/bg.png);
+	background-repeat: repeat;
+	background-position: center center;
 	margin: 0;
 	padding: 0;
 	font-family: "Russo One", sans-serif;
-	font-size: 1rem;
+	font-size: 2vh;
 	font-weight: 400;
 	line-height: 1.5;
 	transition: background 500ms ease-in-out, color 1000ms ease-in-out;
 }
 /* ------------Game Sectructure ------------- */
 .wrapper {
-	background-repeat: repeat;
-	background-position: center center;
 	overflow: hidden;
 	min-height: 93vh;
 	margin-bottom: calc(20px + 0.5vh);
@@ -311,9 +312,9 @@ button:active {
 /* -- Category Selection --- */
 .category-container {
 	text-align: center;
-	border-radius: 15px;
-	height: 675px;
-	padding: 2em 2em;
+
+	height: 44rem;
+	padding: 5vw 15vw;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
@@ -488,21 +489,20 @@ button:active {
 }
 .faq_summary:after {
 	display: inline-block;
-	content: url("../public/svg/icon-arrow-down.svg");
+	content: "\f116";
+	font-family: uicons-regular-rounded !important;
 	background-repeat: no-repeat;
 	background-position: right center;
 	text-align: right;
-	padding-bottom: 20px;
+	padding-bottom: 2rem;
 }
 details[open] .faq_summary:after {
 	display: inline-block;
-	width: 18px;
-	height: 10px;
-	content: "";
-	background-image: url("../public/svg/icon-arrow-down.svg");
+
+	content: "\f119";
+	font-family: uicons-regular-rounded !important;
 	background-repeat: no-repeat;
 	background-position: center right;
-	transform: scaleY(-1);
 }
 .faq_question {
 	left: 0;

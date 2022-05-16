@@ -16,7 +16,7 @@ export default function Scorebox({ settings, setSettings }) {
 		}, 1000);
 
 		return () => clearInterval(intervalId);
-	}, []);
+	}, [settings.gameTime,setSettings]);
 
 	useEffect(() => {
 		setSettings((prevSettings) => {
@@ -25,7 +25,7 @@ export default function Scorebox({ settings, setSettings }) {
 				gameTimeBar: (settings.gameTime * 100) / 60,
 			};
 		});
-	}, [settings.gameTime]);
+	}, [settings.gameTime,setSettings]);
 
 	var style = {
 		width: 100 - settings.gameTimeBar + "%",

@@ -20,8 +20,7 @@ import {
 	increment,
 	setDoc,
 	collection,
-	
-	getDocs
+	getDocs,
 } from "firebase/firestore";
 const AuthContext = React.createContext();
 
@@ -98,10 +97,21 @@ export function AuthProvider({ children }) {
 		}
 	};
 
-	const getNotes = async () => {
+	const getAllRanking = async () => {
 		const notesSnapshot = await getDocs(collection(db, "ranking"));
 		const notesList = notesSnapshot.docs.map((doc) => doc.data());
 		return notesList;
+	};
+
+	const getPoints = async (uid) => {
+		const docRef = doc(db, "ranking", uid);
+		const docSnap = await getDoc(docRef);
+		if (docSnap.exists()) {
+			const { points } = docSnap.data();
+			return points;
+		} else {
+			console.log("No such document!");
+		}
 	};
 
 	useEffect(() => {
@@ -124,7 +134,8 @@ export function AuthProvider({ children }) {
 		updatePassword_,
 		signInWithGoogle,
 		setUserRanking,
-		getNotes,
+		getAllRanking,
+		getPoints,
 	};
 
 	return (
