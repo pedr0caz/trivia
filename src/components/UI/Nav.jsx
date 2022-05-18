@@ -51,7 +51,7 @@ export default function Nav() {
 					<li className="nav-item">
 						<Link to="/contact" className="nav-link">
 							<i className="fi fi-rr-at"></i>
-							<span className="link-text">Contact us</span>
+							<span className="link-text">Contacts</span>
 						</Link>
 					</li>
 				</ul>

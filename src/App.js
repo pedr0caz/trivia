@@ -15,6 +15,7 @@ import Faq from "./components/UI/Faq";
 import Contact from "./components/UI/Contact";
 
 import "./App.css";
+import BlogPost from "./components/UI/BlogPost";
 
 function AppLogin() {
 	return (
@@ -48,6 +49,7 @@ function AppLogin() {
 						<Route path="/faq" element={<Faq />} />
 						<Route path="/" element={<Home />} />
 						<Route path="/contact" element={<Contact />} />
+						<Route path="/blog/post/:id" element={<BlogPost />} />
 					</Routes>
 				</main>
 			</AuthProvider>

@@ -7,14 +7,12 @@
 	--base-ease: cubic-bezier(0.25, 0.46, 0.45, 0.84);
 }
 
-
 body {
 	color: var(--text-secondary);
 	background-color: var(--bg-primary);
 	background-image: url(/public/images/bg.png);
 	background-repeat: repeat;
-	
-	
+
 	margin: 0;
 	padding: 0;
 	font-family: "Russo One", sans-serif;
@@ -237,6 +235,10 @@ td.rank {
 	}
 	.topBar {
 		font-size: 0.75rem !important;
+	}
+
+	.nav-item:nth-last-child(1) {
+		display: none !important;
 	}
 }
 @media only screen and (min-width: 600px) {
@@ -647,6 +649,9 @@ details[open] .faq_summary:after {
 		transform: scale(1.2) !important;
 		z-index: -1 !important;
 	}
+	.form-container {
+		width: 45vh !important;
+	}
 }
 @media only screen and (max-width: 820px) {
 	.category-container {
@@ -829,7 +834,7 @@ details[open] .faq_summary:after {
 	justify-content: center;
 	align-items: center;
 	border-radius: 25px;
-	width: 47vh;
+	width: 90vw;
 }
 
 .inner-container {
@@ -918,4 +923,72 @@ details[open] .faq_summary:after {
 	bottom: 50px;
 	visibility: visible;
 	opacity: 1;
+}
+
+.blog-post {
+	max-width: 46em;
+	margin: auto;
+	margin-top: 10px;
+}
+.post-title {
+	grid-area: header;
+
+	text-transform: uppercase;
+	margin: 1em 0 0.5em;
+	line-height: 1;
+}
+.featured-image {
+	grid-area: featimg;
+}
+.featured-image img {
+	max-width: 100%;
+	width: auto;
+	height: auto;
+}
+.post-meta {
+	grid-area: meta;
+	margin-bottom: 2em;
+}
+.post-content {
+	grid-area: content;
+}
+.post-footer {
+	grid-area: footer;
+	text-align: right;
+	border-top: 1px solid #777;
+	margin-top: 1em;
+}
+
+.date {
+	color: #777;
+}
+
+@media (min-width: 40em) {
+	.blog-post {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 20px;
+		grid-template-areas: "header header header header" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
+	}
+	.post-title {
+		font-size: 2.5em;
+		margin-bottom: 0;
+	}
+}
+@media (min-width: 50em) {
+	.blog-post {
+		grid-template-areas: "header header header header" "featimg featimg featimg featimg" "content content content content" "footer footer footer footer";
+	}
+
+	.date {
+		display: block;
+		margin: 1em 0;
+	}
+	.date:before {
+		display: none;
+	}
+	.post-title {
+		font-size: 3m;
+		margin-bottom: 0.7em;
+	}
 }
