@@ -9,7 +9,7 @@ export default function BlogPost(props) {
 	const { headline, blogPost, src, date } = newsData.find(
 		(item) => item.index === parseInt(id)
 	);
-	console.log(id);
+
 	return (
 		<section>
 			<Logo />

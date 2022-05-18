@@ -118,7 +118,7 @@ export default function Game() {
 					};
 				});
 			})
-			.catch((err) => console.log(err))
+			.catch((err) => err)
 			.finally(() => setLoading(false));
 	}, [urlApi]);
 
