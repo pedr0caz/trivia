@@ -79,47 +79,49 @@ export default function Game() {
 	};
 
 	useEffect(() => {
-		setLoading(true);
-		fetch(urlApi)
-			.then(async (res) => await res.json())
-			.then((data) => {
-				const Data = data.map((item, index) => {
-					const correctAwnser = decodeHtmlEntities(
-						decodeBase64(reverseString(item.correct_answer))
-					);
-					const wrongAwnsers = item.incorrect_answers.map((answer) =>
-						decodeHtmlEntities(decodeBase64(reverseString(answer)))
-					);
-					let allAnswers = [];
-					for (let i of wrongAwnsers) {
-						allAnswers.push(i);
-					}
-					const randomNum = Math.floor(Math.random() * 4);
-					allAnswers.splice(randomNum, 0, correctAwnser);
+		if (urlApi) {
+			setLoading(true);
+			fetch(urlApi)
+				.then(async (res) => await res.json())
+				.then((data) => {
+					const Data = data.map((item, index) => {
+						const correctAwnser = decodeHtmlEntities(
+							decodeBase64(reverseString(item.correct_answer))
+						);
+						const wrongAwnsers = item.incorrect_answers.map((answer) =>
+							decodeHtmlEntities(decodeBase64(reverseString(answer)))
+						);
+						let allAnswers = [];
+						for (let i of wrongAwnsers) {
+							allAnswers.push(i);
+						}
+						const randomNum = Math.floor(Math.random() * 4);
+						allAnswers.splice(randomNum, 0, correctAwnser);
 
-					return {
-						id: index,
-						category: item.category,
-						type: item.type,
-						difficulty: item.difficulty,
-						text: decodeHtmlEntities(item.question.trim()),
-						correct: correctAwnser,
-						incorrect: wrongAwnsers,
-						choices: allAnswers.map((answer) => ({
-							text: answer,
-						})),
-					};
-				});
+						return {
+							id: index,
+							category: item.category,
+							type: item.type,
+							difficulty: item.difficulty,
+							text: decodeHtmlEntities(item.question.trim()),
+							correct: correctAwnser,
+							incorrect: wrongAwnsers,
+							choices: allAnswers.map((answer) => ({
+								text: answer,
+							})),
+						};
+					});
 
-				setSettings((prevSettings) => {
-					return {
-						...prevSettings,
-						gameQuestions: Data,
-					};
-				});
-			})
-			.catch((err) => err)
-			.finally(() => setLoading(false));
+					setSettings((prevSettings) => {
+						return {
+							...prevSettings,
+							gameQuestions: Data,
+						};
+					});
+				})
+				.catch((err) => err)
+				.finally(() => setLoading(false));
+		}
 	}, [urlApi]);
 
 	useEffect(() => {
